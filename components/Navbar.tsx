@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { UserButton } from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs/server';import MobileNav from './MobileNav';
 
-import MobileNav from './MobileNav';
-
-const Navbar = () => {
+const Navbar = async () => {
+  const { userId } = await auth();
   return (
     <nav className="fixed top-0 z-[100] flex w-full items-center justify-between bg-dark-1 px-6 py-4 lg:px-10">
       <Link href="/" className="flex items-center gap-1">
@@ -19,6 +20,7 @@ const Navbar = () => {
         </p>
       </Link>
       <div className="flex-between gap-5">
+          {userId && <UserButton />}
         <MobileNav />
       </div>
     </nav>
