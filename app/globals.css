@@ -2,6 +2,26 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* ======== stream css overrides ======== */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.glassmorphism2 {
+  background: rgba(18, 17, 17, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hero-banner {
+  background-image: url('/images/hero-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* ==== clerk class override ===== */
 .cl-providerIcon-github {
   filter: invert(1);
@@ -90,6 +110,13 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-sky-1: #C9DDFF;
+  --color-sky-2: #ECF0FF;
+  --color-sky-3: #F5FCFF;
+
+  --color-orange-1: #FF742E;
+  --color-purple-1: #830EF9;
+  --color-yellow-1: #F9A90E;
 }
 
 :root {
