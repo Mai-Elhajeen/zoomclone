@@ -11,6 +11,7 @@ import Loader from './Loader';
 import { Textarea } from './ui/textarea';
 import { Input } from './ui/input';
 import { useToast } from './ui/use-toast';
+import ReactDatePicker from 'react-datepicker';
 
 const initialValues = {
   dateTime: new Date(),
@@ -119,6 +120,16 @@ const MeetingTypeList = () => {
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
               Select Date and Time
             </label>
+            <ReactDatePicker
+              selected={values.dateTime}
+              onChange={(date) => setValues({ ...values, dateTime: date! })}
+              showTimeSelect
+              timeFormat="HH:mm"
+              timeIntervals={15}
+              timeCaption="time"
+              dateFormat="MMMM d, yyyy h:mm aa"
+              className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+            />
           </div>
         </MeetingModal>
       ) : (
