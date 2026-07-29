@@ -24,23 +24,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const clerkAppearance: Record<string, any> = {
+    layout: {
+      socialButtonsVariant: "iconButton",
+      logoImageUrl: "/icons/yoom-logo.svg",
+    },
+    variables: {
+      colorText: "#fff",
+      colorPrimary: "#0E78F9",
+      colorBackground: "#1C1F2E",
+      colorInputBackground: "#252A41",
+      colorInputText: "#fff",
+    },
+  };
   return (
     <html lang="en" className="dark h-full">
-      <ClerkProvider
-        appearance={{
-          layout: {
-            socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/yoom-logo.svg",
-          },
-          variables: {
-            colorText: "#fff",
-            colorPrimary: "#0E78F9",
-            colorBackground: "#1C1F2E",
-            colorInputBackground: "#252A41",
-            colorInputText: "#fff",
-          },
-        }}
-      >
+      <ClerkProvider appearance={clerkAppearance}>
         <body className={`${inter.className} min-h-screen bg-dark-2 text-white`}>
           <Toaster />
           {children}

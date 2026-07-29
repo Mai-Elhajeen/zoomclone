@@ -10,37 +10,22 @@ import Loader from '@/components/Loader';
 const API_KEY = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
 const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
-  console.log('Provider Rendered');
 
   const [videoClient, setVideoClient] = useState<StreamVideoClient>();
   const { user, isLoaded } = useUser();
 
-  console.log({
-    isLoaded,
-    user,
-    API_KEY,
-  });
-
   useEffect(() => {
-    console.log('useEffect fired');
-
     if (!isLoaded) {
-      console.log('Clerk not loaded');
       return;
     }
 
     if (!user) {
-      console.log('No user');
       return;
     }
 
     if (!API_KEY) {
-      console.log('Missing API KEY');
       return;
     }
-
-    console.log('Creating Stream Client...');
-
     const client = new StreamVideoClient({
       apiKey: API_KEY,
       user: {
@@ -51,7 +36,6 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
       tokenProvider,
     });
 
-    console.log('Client Created');
 
     setVideoClient(client);
 
@@ -61,11 +45,8 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
   }, [isLoaded, user]);
 
   if (!videoClient) {
-    console.log('Waiting for videoClient...');
     return <Loader />;
   }
-
-  console.log('Rendering children');
 
   return (
     <StreamVideo client={videoClient}>
