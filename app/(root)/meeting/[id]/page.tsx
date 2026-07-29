@@ -14,7 +14,8 @@ import MeetingRoom from '@/components/MeetingRoom';
 const MeetingPage = () => {
   const { id } = useParams();
   const { isLoaded, user } = useUser();
-  const { call, isCallLoading } = useGetCallById(id);
+  const meetingId = typeof id === 'string' ? id : undefined;
+  const { call, isCallLoading } = useGetCallById(meetingId);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 
   if (!isLoaded || isCallLoading) return <Loader />;
@@ -35,11 +36,11 @@ const MeetingPage = () => {
       <StreamCall call={call}>
         <StreamTheme>
 
-        {!isSetupComplete ? (
-          <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
-        ) : (
-          <MeetingRoom />
-        )}
+          {!isSetupComplete ? (
+            <MeetingSetup setIsSetupComplete={setIsSetupComplete} />
+          ) : (
+            <MeetingRoom />
+          )}
         </StreamTheme>
       </StreamCall>
     </main>
