@@ -40,7 +40,6 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     }
   };
 
-  // this effect fetches recordings when the type is 'recordings' and updates the state
   useEffect(() => {
     const fetchRecordings = async () => {
       const callData = await Promise.all(
