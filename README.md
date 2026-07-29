@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <a href="https://zoomclonap.netlify.app/" target="_blank">
+    <img src="public/icons/logo.svg" alt="Zoom Clone Logo" width="64" />
+  </a>
+</p>
 
-## Getting Started
+# 🎥 Zoom Clone
 
-First, run the development server:
+A modern full-stack Zoom Clone built with **Next.js 16**, **Stream Video SDK**, **Clerk Authentication**, **Tailwind CSS v4**, and **shadcn/ui**.
+
+Users can securely authenticate, create instant or scheduled meetings, join meetings through invitation links, and manage upcoming meetings and recordings with a clean and responsive interface.
+
+---
+
+## ✨ Features
+
+- 🔐 Authentication with Clerk
+- 📹 Instant video meetings
+- 📅 Schedule meetings
+- 🔗 Join meetings via shared links
+- 👥 Meeting setup (camera & microphone preview)
+- 🎙 Toggle microphone and camera before joining
+- 📂 Upcoming meetings
+- 📼 Meeting recordings
+- 🌙 Modern responsive UI
+- ⚡ Server Actions
+- 🔒 Secure Stream token generation
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Lucide React
+
+### Authentication
+
+- Clerk
+
+### Video
+
+- Stream Video SDK
+
+### Deployment
+
+- Netlify
+
+---
+
+## 📸 Screenshots
+
+![Home Page](./public/screenshots/home.png)
+
+![Home Page In Mobile](./public/screenshots/hom-in-mobile.png)
+
+![Menu Home Page In Mobile](./public/screenshots/menu-in-mobile.png)
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file.
+
+```env
+# Clerk 
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_dWx0aW1hdGUta2FuZ2Fyb28tMTMuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_blYazV05uslU49ISQbmMqsrCrWnG2o7YaXichYvKin
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+# Stream 
+NEXT_PUBLIC_STREAM_API_KEY=tgjjuxqp89v6
+STREAM_API_SECRET=6d8pf5nfpyxwth2pybjr6dj5h395e33w8f832p2wmektv26e8abuc5z5p77rx8er
+
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+```
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/Mai-Elhajeen/zoomclone.git
+```
+
+Move into the project
+
+```bash
+cd zoomclone
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+This project is configured to be deployed on **Netlify**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📈 Roadmap
+
+- [x] Authentication
+- [x] Stream Video Integration
+- [x] Meeting Creation
+- [x] Meeting Setup
+- [x] Join Meeting
+- [x] Upcoming Meetings
+- [x] Recordings
+- [x] Screen Sharing
+---
+
+## 👩🏼‍💻 Author
+<p>
+  <strong>Dev. Mai Elhajeen</strong><br><br>
+  <a href="https://github.com/Mai-Elhajeen" target="_blank">
+    GitHub
+  </a>
+  <br/>
+  <a href="https://zoomclonap.netlify.app/" target="_blank">
+    Live Demo
+  </a>
+</p>
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
