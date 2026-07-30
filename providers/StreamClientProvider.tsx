@@ -7,25 +7,18 @@ import { useUser } from '@clerk/nextjs';
 import { tokenProvider } from '@/actions/stream.actions';
 import Loader from '@/components/Loader';
 
-const API_KEY = process.env.NEXT_PUBLIC_STREAM_API_KEY;
-
 const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
+
+  const API_KEY = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
   const [videoClient, setVideoClient] = useState<StreamVideoClient>();
   const { user, isLoaded } = useUser();
 
   useEffect(() => {
-    if (!isLoaded) {
+    if (!isLoaded || !user || !API_KEY) {
       return;
     }
 
-    if (!user) {
-      return;
-    }
-
-    if (!API_KEY) {
-      return;
-    }
     const client = new StreamVideoClient({
       apiKey: API_KEY,
       user: {
@@ -36,13 +29,12 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
       tokenProvider,
     });
 
-
     setVideoClient(client);
 
     return () => {
       client.disconnectUser();
     };
-  }, [isLoaded, user]);
+  }, [isLoaded, user, API_KEY]);
 
   if (!videoClient) {
     return <Loader />;
