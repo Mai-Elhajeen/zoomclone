@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://zoomclonap.netlify.app/" target="_blank">
+  <a href="https://zoomclonap.netlify.app/sign-in" target="_blank">
     <img src="public/icons/logo.svg" alt="Zoom Clone Logo" width="64" />
   </a>
 </p>
@@ -151,7 +151,7 @@ This project is configured to be deployed on **Netlify**.
     GitHub
   </a>
   <br/>
-  <a href="https://zoomclonap.netlify.app/" target="_blank">
+  <a href="https://zoomclonap.netlify.app/sign-in" target="_blank">
     Live Demo
   </a>
 </p>
